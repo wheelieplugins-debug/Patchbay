@@ -219,7 +219,7 @@
 
     .hero-scroll {
       position: absolute;
-      bottom: 2.5rem;
+      bottom: 1.5rem;
       left: 4rem;
       display: flex;
       align-items: center;
@@ -378,10 +378,39 @@
       margin-bottom: 0.6rem;
     }
 
-    .feature-num + .feature-title + .feature-desc {
-      font-size: 0.88rem;
+    .step-content p {
+      font-size: 0.92rem;
       color: var(--cream-dim);
       line-height: 1.75;
+      max-width: 580px;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 7rem 4rem;
+      text-align: center;
+    }
+
+    .contact-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 900;
+      color: var(--cream);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .contact-sub {
+      font-size: 1rem;
+      color: var(--cream-dim);
+      max-width: 480px;
+      margin: 0 auto 1rem;
+      line-height: 1.8;
     }
 
     /* ── PRICING ── */
@@ -518,94 +547,6 @@
       margin-bottom: 0.4rem;
     }
 
-    .step-content p {
-      font-size: 0.92rem;
-      color: var(--cream-dim);
-      line-height: 1.75;
-      max-width: 580px;
-    }
-
-    <!-- CONTACT -->
-  <section class="contact-section" id="contact">
-    <p class="section-label" style="justify-content:center">Human scale management, bear with me :).</p>
-    <h2 class="contact-title" style="margin-bottom: 2rem;">Got questions?<br><em>Get in touch.</em></h2>
-    <p class="contact-sub" style="font-family: 'DM Mono', monospace; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.05em;">
-      Any question: wheelieplugins(at)gmail(dot)com
-    </p>
-  </section>
-    }
-
-    .waitlist-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      font-weight: 900;
-      color: var(--cream);
-      line-height: 1.05;
-      margin-bottom: 1rem;
-    }
-
-    .waitlist-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .waitlist-sub {
-      font-size: 1rem;
-      color: var(--cream-dim);
-      max-width: 480px;
-      margin: 0 auto 3rem;
-      line-height: 1.8;
-    }
-
-    .waitlist-form {
-      display: flex;
-      gap: 0;
-      max-width: 480px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .waitlist-input {
-      flex: 1;
-      padding: 0.9rem 1.2rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border-lt);
-      border-right: none;
-      color: var(--cream);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .waitlist-input::placeholder { color: var(--cream-dim); opacity: 0.5; }
-    .waitlist-input:focus { border-color: var(--gold); }
-
-    .waitlist-btn {
-      padding: 0.9rem 1.8rem;
-      background: var(--gold);
-      color: var(--bg);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-      white-space: nowrap;
-    }
-
-    .waitlist-btn:hover { background: var(--gold-lt); }
-
-    .waitlist-fine {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      color: var(--cream-dim);
-      opacity: 0.5;
-      text-transform: uppercase;
-    }
-
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -649,9 +590,7 @@
       .feature-item { border-right: none !important; }
       .pricing-section { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
       .how-section { padding: 5rem 2rem; }
-      .waitlist-section { padding: 5rem 2rem; }
-      .waitlist-form { flex-direction: column; }
-      .waitlist-input { border-right: 1px solid var(--border-lt); border-bottom: none; }
+      .contact-section { padding: 5rem 2rem; }
       footer { flex-direction: column; gap: 1rem; padding: 2rem; text-align: center; }
       .hero::after { display: none; }
     }
@@ -677,11 +616,11 @@
     <p class="hero-sub">The Insert I/O plugin we should have had since the beginning.</p>
     <div class="hero-cta">
       <a href="https://drive.google.com/drive/folders/1Zh_VfulcojXpbLX56awi3yXhNDE8vVpl?usp=sharing" target="_blank" class="btn-primary">Download The Demo</a>
-      <a href="#features" class="btn-ghost">Explore Features</a>
+      <a href="https://wheelieplugins-debug.github.io/PatchbayCheckOut/" class="btn-outline">Buy it Now</a>
     </div>
     <div class="hero-scroll">
       <span class="scroll-line"></span>
-      Scroll to explore
+      <a href="#features" class="btn-ghost">Explore Features</a>
     </div>
   </section>
 
@@ -749,6 +688,11 @@
           <p class="feature-title">Auto-Gain</p>
           <p class="feature-desc">A basic gain match function to avoid getting fooled by loudness and help gain staging when using dry/wet.</p>
         </div>
+        <div class="feature-item">
+          <p class="feature-num">08</p>
+          <p class="feature-title">Customizable GUI</p>
+          <p class="feature-desc">You can make it bigger, smaller, change the colors, the contrast, the brightness of eveything. You can also change the fonts. You can even choose different models of knobs. GUI is not my forte but at least everyone can pick its favorite ugly one :).</p>
+        </div>
       </div>
     </div>
   </section>
@@ -788,8 +732,8 @@
         <div class="step">
           <p class="step-num">01</p>
           <div class="step-content">
-            <h4>Grab the unlimited demo, try it extensively, then buy it </h4>
-            <p>Licenses are issued "by hand" and I will authorize all licenses myself, no mass distribution, no automation, nothing big.</p>
+            <h4>Grab the unlimited demo, try it extensively, authorize it </h4>
+            <p>Install the trial, READ THE READ ME FILE, especially if you have some of the newer Mac OSX (de-quanrantine the plugin makes it easier to install). Licenses are issued "by hand" and I will authorize all licenses myself, no mass distribution, no automation, nothing big.</p>
           </div>
         </div>
         <div class="step">
@@ -817,14 +761,14 @@
     </div>
   </section>
 
-  <!-- WAITLIST -->
-  <section class="waitlist-section" id="waitlist" style="text-align: center;">
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
     <p class="section-label" style="justify-content:center">Human scale management, bear with me :).</p>
-    <h2 class="waitlist-title" style="margin-bottom: 1.5rem;">A question?<br><em>Contact me here</em></h2>
-    <p class="waitlist-sub" style="font-family: 'DM Mono', monospace; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.05em; margin: 0 auto 1rem;">
+    <h2 class="contact-title">Got questions?<br><em>Get in touch.</em></h2>
+    <p class="contact-sub" style="font-family: 'DM Mono', monospace; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.05em; margin: 0 auto 1rem;">
       wheelieplugins(at)gmail(dot)com
     </p>
-    <p class="waitlist-sub" style="font-size: 0.95rem; max-width: 480px; margin: 0 auto;">
+    <p class="contact-sub" style="font-size: 0.95rem; max-width: 480px; margin: 0 auto;">
       I will do my best to answer any question :).
     </p>
   </section>
@@ -841,7 +785,7 @@
       e.preventDefault();
       const input = e.target.querySelector('input');
       const email = encodeURIComponent(input.value);
-      
+       
       // Redirects directly to your checkout repository page, cleanly passing the email
       window.location.href = "https://wheelieplugins-debug.github.io/PatchbayCheckOut/?email=" + email;
     }
@@ -857,7 +801,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.feature-item, .step, .split-block').forEach(el => {
+    document.querySelectorAll('.feature-item, .step, .split-block, .contact-section').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(16px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
