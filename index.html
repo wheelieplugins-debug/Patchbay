@@ -181,6 +181,28 @@
       transform: translateY(-1px);
     }
 
+    .btn-outline {
+      display: inline-block;
+      padding: 0.9rem 2.4rem;
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--bg);
+      transform: translateY(-1px);
+    }
+
     .btn-ghost {
       font-family: 'DM Mono', monospace;
       font-size: 0.7rem;
@@ -356,7 +378,7 @@
       margin-bottom: 0.6rem;
     }
 
-    .feature-desc {
+    .feature-num + .feature-title + .feature-desc {
       font-size: 0.88rem;
       color: var(--cream-dim);
       line-height: 1.75;
@@ -443,7 +465,7 @@
       letter-spacing: 0.12em;
       color: var(--gold);
       opacity: 0.7;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       text-transform: uppercase;
     }
 
@@ -642,7 +664,7 @@
       <li><a href="#features">Features</a></li>
       <li><a href="#how">Activation</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#demo">Demo</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1Zh_VfulcojXpbLX56awi3yXhNDE8vVpl?usp=sharing" target="_blank">Demo</a></li>
     </ul>
   </nav>
 
@@ -652,7 +674,7 @@
     <h1 class="hero-title">Patch<em>bay</em></h1>
     <p class="hero-sub">The Insert I/O plugin we should have had since the beginning.</p>
     <div class="hero-cta">
-      <a href="#waitlist" class="btn-primary">Download The Demo</a>
+      <a href="https://drive.google.com/drive/folders/1Zh_VfulcojXpbLX56awi3yXhNDE8vVpl?usp=sharing" target="_blank" class="btn-primary">Download The Demo</a>
       <a href="#features" class="btn-ghost">Explore Features</a>
     </div>
     <div class="hero-scroll">
@@ -746,7 +768,8 @@
           <li>Machine-locked, offline activation</li>
           <li>Free updates for life</li>
         </ul>
-        <a href="#waitlist" class="btn-primary" style="display:block; text-align:center">Grab the demo</a>
+        <a href="https://drive.google.com/drive/folders/1Zh_VfulcojXpbLX56awi3yXhNDE8vVpl?usp=sharing" target="_blank" class="btn-primary" style="display:block; text-align:center">Grab the demo</a>
+        <a href="https://wheelieplugins-debug.github.io/PatchbayCheckOut/" class="btn-outline" style="display:block; text-align:center; margin-top:0.8rem">Buy it here</a>
         <p class="pricing-student">Human scale plugin company, so be human with me please :)</p>
       </div>
     </div>
@@ -811,15 +834,14 @@
   </footer>
 
   <script>
-    // Waitlist form stub
+    // Handles the email input and redirects to the official Patchbay Checkout
     function handleSubmit(e) {
       e.preventDefault();
       const input = e.target.querySelector('input');
-      const btn = e.target.querySelector('button');
-      btn.textContent = 'You\'re on the list';
-      btn.style.background = '#2a6644';
-      input.disabled = true;
-      btn.disabled = true;
+      const email = encodeURIComponent(input.value);
+      
+      // Redirects directly to your checkout repository page, cleanly passing the email
+      window.location.href = "https://wheelieplugins-debug.github.io/PatchbayCheckOut/?email=" + email;
     }
 
     // Subtle scroll-reveal for sections
